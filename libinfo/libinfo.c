@@ -1,6 +1,6 @@
 #include "libinfo.h"
 #include <stdio.h>
-#include <Foundation/Foundation.h>
+#include <unistd.h>
 
 void getinfo() {
     int uid = getuid();
