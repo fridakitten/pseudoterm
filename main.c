@@ -10,15 +10,21 @@
 #include "libconv/libconv.h"
 
 void output(char* input) {
-    uint64_t hello = charuint(input);
-    printf("%llu\n",hello);
-    /*if(strcmp(input, "info") == 0) {
-        getinfo();
-    } else if(strcmp(input, "hello") == 0) {
-        printf("welcome %s\n",ghost());
-    } else if(strcmp(input, "exit") == 0) {
-        return;
-    }*/
+    uint64_t converted = charuint(input);
+    switch(converted) {
+        case 478560413032:
+            printf("welcome %s\n",ghost());
+            break;
+        case 1868983913:
+            getinfo();
+            break;
+        case 1953069157:
+            return;
+        case 0:
+            return;
+        default:
+            printf("command %s(%llu) unknown\n",input,converted);
+    }
 }
 
 int main() {
