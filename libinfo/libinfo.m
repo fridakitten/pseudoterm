@@ -5,6 +5,5 @@
 void getinfo() {
     int uid = getuid();
     int gid = getgid();
-    int pid = getpid();
-    printf("UID: %d\nGID: %d\nPID: %d\n",uid,gid,pid);
+    printf("uid=%d gid=%d\n",uid,gid);
 }

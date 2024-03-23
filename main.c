@@ -15,7 +15,7 @@ void output(char* input) {
         case 478560413032:
             printf("welcome %s\n",ghost());
             break;
-        case 1868983913:
+        case 25705:
             getinfo();
             break;
         case 1953069157:
