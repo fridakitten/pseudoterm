@@ -9,7 +9,7 @@ void execmodeswitch() {
 }
 
 uint8_t exec(char* command) {
-    if(execmode==true) {
+    if(execmode) {
         uint8_t execcode = system(command);
         return execcode;
     } else {
