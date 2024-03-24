@@ -5,11 +5,7 @@
 bool execmode = false;
 
 void execmodeswitch() {
-    if(execmode==false) {
-        execmode = true;
-    } else {
-        execmode = false;
-    }
+    execmode = !execmode;
 }
 
 uint8_t exec(char* command) {
