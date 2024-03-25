@@ -10,6 +10,9 @@
 #include "libconv/libconv.h"
 #include "libexec/libexec.h"
 
+bool execenabled = false;
+uint8_t execmode = 0;
+
 void output(char* input) {
     uint64_t converted = charuint(input);
     switch(converted) {
@@ -20,7 +23,12 @@ void output(char* input) {
             getinfo();
             return;
         case 32419239451523173: //exec -s
-            execmodeswitch();
+            execenabled = true;
+            execmode = 0;
+            return;
+        case 8317635178929682533: //exec -ns
+            execenabled = true;
+            execmode = 1;
             return;
         case 0: //NULL
             return;
@@ -29,11 +37,18 @@ void output(char* input) {
         default:
             break;
     }
-    uint8_t code = exec(input);
-    if(code==55) {
+    if(execenabled) {
+        uint8_t code;
+        if(execmode==0) {
+            code = execns(input);
+        } else if(execmode==1) {
+            code = execs(input);
+        }
+        if(code!=0) {
+            printf("exit with code: %d\n",code);
+        }
+    } else {
         printf("command %s(%llu) unknown\n",input,converted);
-    } else if(code!=0) {
-        printf("exit with code: %d\n",code);
     }
 }
 
