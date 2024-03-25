@@ -53,15 +53,15 @@ void output(char* input) {
 }
 
 int main() {
-    bool loop = true;
     char *input;
     char *hostcal;
     sprintf(hostcal, "%s:/> ",ghost());
-    while(loop) {
+    while(true) {
         input = readline(hostcal);
         output(input);
         if(strcmp(input, "exit") == 0) {
             return 0;
         }
     }
+    return 0;
 }
