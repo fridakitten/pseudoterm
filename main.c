@@ -15,12 +15,13 @@ void output(char* input) {
     switch(converted) {
         case 478560413032: //hello
             printf("welcome %s\n",ghost());
-            break;
+            return;
         case 25705: //id
             getinfo();
-            break;
+            return;
         case 32419239451523173: //exec -s
             execmodeswitch();
+            return;
         case 0: //NULL
             return;
         case 1953069157:
