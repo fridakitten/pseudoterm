@@ -1,4 +1,4 @@
 #Makefile
 
 all:
-	@clang -lreadline main.c libhost/libhost.c libinfo/libinfo.c libconv/libconv.c libexec/libexec.c -o pterm
+	@clang -lreadline -framework Foundation main.c libhost/libhost.c libinfo/libinfo.c libconv/libconv.c libexec/libexec.m -o pterm
