@@ -1,4 +1,3 @@
-#include "libinfo.h"
 #include <stdio.h>
 #include <unistd.h>
 

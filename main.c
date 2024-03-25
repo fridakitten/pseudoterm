@@ -56,7 +56,7 @@ int main() {
     bool loop = true;
     char *input;
     char *hostcal;
-    sprintf(hostcal, "%s:/>",ghost());
+    sprintf(hostcal, "%s:/> ",ghost());
     while(loop) {
         input = readline(hostcal);
         output(input);
